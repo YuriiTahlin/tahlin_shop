@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: #E8E8E8;
+}
+
+.wrapper {
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  max-width: 1080px;
+  margin: 50px auto;
+  padding: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+  margin-top: -45px;
+}
+
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  margin-left: -20px;
+}
+
+.headerLeft img {
+  margin-right: 15px;
+}
+
+.headerRight {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+}
+
+.headerRight li {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* відстань між кошиком і ціною */
+}
+
+.headerInfo h3 {
+  margin-bottom: -15px;
+}
+
+.card {
+  border: 2px solid #f8f8f8;
+  padding: 35px;
+  width: 140px;
+  border-radius: 40px;
+  margin-right: 75px;
+}
+
+.button {
+  background-color: #ffffff;
+  border: 0px solid #f2f2f2;
+  box-sizing: border-box;
+  height: 32px;
+  width: 3px;
+  cursor: pointer;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.sneakers {
+  display: flex;
+}
+
+.search-block {
+   border: 0px solid #f3f3f3;
+   display: flex;
+   align-items: center;
+   justify-content: right;
+   gap: 610px; /* Відступ між "Всі моделі iPhone" та "Пошук" */
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.content {
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
