@@ -59,15 +59,20 @@ header {
   width: 140px;
   border-radius: 40px;
   margin-right: 75px;
+  background-color: #f2f2f2;
+  transition: box-shadow 0.2s ease-in-out;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1); /* Тінь при наведенні на картку */
+  transform: translateY(-2px);
 }
 
 .button {
-  background-color: #ffffff;
-  border: 0px solid #f2f2f2;
-  box-sizing: border-box;
-  height: 32px;
-  width: 3px;
+  position: absolute;
   cursor: pointer;
+  right: 18px; /* Відстань від правого краю контейнера кнопки "Додати в корзику" */
 }
 
 h5 {
@@ -77,6 +82,7 @@ h5 {
 
 .sneakers {
   display: flex;
+  position: relative;
 }
 
 .search-block {
@@ -84,13 +90,24 @@ h5 {
    display: flex;
    align-items: center;
    justify-content: right;
-   gap: 610px; /* Відступ між "Всі моделі iPhone" та "Пошук" */
+   gap: 590px; /* Відступ між "Всі моделі iPhone" та "Пошук" */
 }
 
 .search {
   display: flex;
   align-items: center;
-  gap: 5px;
+  position: relative;
+}
+
+.search img {
+  position: absolute;
+  left: 8px; /* Відстань значка пошуку в строці пошуку */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search input {
+  padding-left: 20px; /* Збільшення відступу для врахування іконки */
 }
 
 .content {
@@ -100,3 +117,12 @@ h5 {
   display: flex;
   align-items: center;
 }
+
+.favorite {
+  position: absolute;
+  cursor: pointer;
+  top: 15px;
+  left: 15px;
+}
+
+
