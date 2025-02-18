@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background-color: #E8E8E8;
 }
 
@@ -23,7 +21,6 @@ header {
   border-bottom: 1px solid #eaeaea;
   margin-top: -45px;
 }
-
 
 .headerLeft {
   display: flex;
@@ -46,7 +43,7 @@ header {
 .headerRight li {
   display: flex;
   align-items: center;
-  gap: 8px; /* відстань між кошиком і ціною */
+  gap: 8px;
 }
 
 .headerInfo h3 {
@@ -72,7 +69,7 @@ header {
 .button {
   position: absolute;
   cursor: pointer;
-  right: 18px; /* Відстань від правого краю контейнера кнопки "Додати в корзику" */
+  right: 18px; /* Відстань від правого краю контейнера кнопки "Додати в кошик" */
 }
 
 h5 {
@@ -86,11 +83,9 @@ h5 {
 }
 
 .search-block {
-   border: 0px solid #f3f3f3;
-   display: flex;
-   align-items: center;
-   justify-content: right;
-   gap: 590px; /* Відступ між "Всі моделі iPhone" та "Пошук" */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Вирівнювання елементів по краях */
 }
 
 .search {
@@ -110,13 +105,7 @@ h5 {
   padding-left: 20px; /* Збільшення відступу для врахування іконки */
 }
 
-.content {
-}
-
-.price {
-  display: flex;
-  align-items: center;
-}
+.content {}
 
 .favorite {
   position: absolute;
@@ -125,4 +114,124 @@ h5 {
   left: 15px;
 }
 
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
 
+.drawer {
+  position: fixed;
+  width: 280px; /* Ширина випадаючого кошика */
+  height: 100%; /* Висота випадаючого кошика */
+  top: 0;
+  right: 0;
+  background: #f2f2f2;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+
+.cartItemsContainer {
+  flex: 1; /* Робить контейнер еластичним */
+  overflow-y: auto; /* Включає вертикальну прокрутку */
+  max-height: 60vh; /* Обмежує висоту блоку, щоб кнопка не зникала */
+  padding-right: 10px; /* Щоб скролбар не накладався на контент */
+}
+
+.cartTotalBlock {
+  position: sticky;
+  bottom: 0;
+  background: #f2f2f2;
+  padding-top: 10px;
+}
+
+h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 10px 10px;
+}
+
+.cartItem {
+  border-radius: 15px;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Відстань між блоками доданих в корзину продуктів */
+}
+
+.cartItem div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1px; /* Відстань тексту до зображення в кошику */
+  line-height: 1; /* Зменшує висоту рядка */
+}
+
+.cartItem b {
+  margin-bottom: 20px; /* Піднімає текст вище */
+}
+
+.cartItem img[alt="Remove"] {
+  margin-left: auto; /* Автоматично відсуває кнопку видалення товару вправо */
+  cursor: pointer;
+  margin-right: 7px;
+}
+
+.removeBtn {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.removeBtn:hover {
+  opacity: 1; /* Анімація кнопки видалення з кошику */
+}
+
+.cartTotalBlock {
+  div {
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dashed #666666;
+  }
+  li {
+    display: flex;
+    align-items: flex-end;
+  }
+  .greenButton {
+    width: 100%;
+    height: 55px;
+    background: #9dd558;
+    border-radius: 20px;
+    border: 0;
+    color: #ffffff;
+    font-size: 16px; /* Розмір тексту на клавіші */
+    font-weight: 500; /* Товщина тексту на клавіші */
+    transition: background 0.3s ease;
+    cursor: pointer;
+  }
+
+  .greenButton:hover {
+    background: #b0e06b; /* Світліший відтінок */
+}
+
+  ul {
+    display: block;
+    margin-bottom: 30px; /* Відстань від кнопки "Оформити замовлення" до "До сплати" */
+  }
+}
+
+.items {
+  margin-top: auto; /* Автоматично опускає блок вниз */
+  margin-bottom: 50px;
+}
+
+.finalPrice {
+  margin-left: -35px; /* Коригування відступу блоку "До сплати" від лівої межі кошика */
+}
