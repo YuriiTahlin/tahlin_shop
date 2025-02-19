@@ -235,3 +235,14 @@ h2 {
 .finalPrice {
   margin-left: -35px; /* Коригування відступу блоку "До сплати" від лівої межі кошика */
 }
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px; /* Відступ між span, b та кнопкою */
+}
+
+.addButton {
+  cursor: pointer;
+}
