@@ -246,3 +246,7 @@ h2 {
 .addButton {
   cursor: pointer;
 }
+
+.headerRight li {
+    cursor: pointer;
+}
