@@ -230,6 +230,8 @@ h2 {
 .items {
   margin-top: auto; /* Автоматично опускає блок вниз */
   margin-bottom: 50px;
+  flex: 2.5;
+  overflow-y: auto;
 }
 
 .finalPrice {

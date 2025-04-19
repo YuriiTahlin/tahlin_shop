@@ -3,18 +3,25 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 
-const arr = [
-    { title: "iPhone 13", price: 20999, imageUrl: "/img/sneakers/1.png" },
-    { title: "iPhone 14", price: 24999, imageUrl: "/img/sneakers/2.png"},
-    { title: "iPhone 15", price: 29999, imageUrl: "/img/sneakers/3.png"},
-    { title: "iPhone 16", price: 39999, imageUrl: "/img/sneakers/4.png"}
-];
-
 function App() {
+    const [items,setItems] = React.useState([])
+    const [cartItems,setCartItems] = React.useState([])
     const [cartOpened, setCartOpened] = React.useState(false);
+
+    React.useEffect(() => {
+  fetch('https://6803835b0a99cb7408ec34a4.mockapi.io/items')
+    .then(res => res.json())
+    .then(json => setItems(json));
+}, []);
+
+    const onAddToCart = (obj) => {
+        setCartItems([...cartItems, obj]);
+    }
+
+
     return (
         <div className="wrapper">
-            {cartOpened && <Drawer onClose={()=> setCartOpened(false)}/>}
+            {cartOpened && <Drawer items={cartItems} onClose={()=> setCartOpened(false)}/>}
         <Header onClickCart={() => setCartOpened(true)} />
             <div className="content">
                 <div className="search-block">
@@ -26,13 +33,13 @@ function App() {
                 </div>
 
                 <div className="sneakers">
-                    {arr.map((obj) => (
+                    {items.map((obj) => (
                     <Card
                         title={obj.title}
                         price={obj.price}
                         imageUrl={obj.imageUrl}
                         onFavorite={() => console.log('Додано в закладки')}
-                        onPlus={() => console.log('Натиснули плюс')}
+                        onPlus={(obj) => onAddToCart(obj)}
                     />
                         ))}
                 </div>

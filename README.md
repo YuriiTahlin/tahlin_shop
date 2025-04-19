@@ -3,7 +3,7 @@
 ## Description  
 **Tahlin Shop** is an online store interface for Apple devices, built with React. This project provides a user-friendly shopping experience with essential features like a cart, search functionality, and user profile management.  
 
-## Features (v3.0.0)  
+## Features (v4.0.0)  
 ✅ Storefront interface for Apple products  
 ✅ Shopping cart functionality  
 ✅ Search bar for filtering products  
